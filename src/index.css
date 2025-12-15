@@ -1,96 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Reddy Infra Design System - Industrial Aesthetic */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    /* Primary: Deep Steel Blue */
+    --primary: 213 50% 25%;
+    --primary-foreground: 0 0% 98%;
+    
+    /* Secondary: Concrete Grey */
+    --secondary: 220 9% 46%;
+    --secondary-foreground: 0 0% 98%;
+    
+    /* Accent: Dark Green (Trust/Growth) */
+    --accent: 155 54% 22%;
+    --accent-foreground: 0 0% 98%;
+    
+    /* Background: Off-white with warmth */
+    --background: 40 20% 97%;
+    --foreground: 0 0% 10%;
+    
+    /* Card: Clean white */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 0 0% 10%;
+    
+    /* Popover */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
+    --popover-foreground: 0 0% 10%;
+    
+    /* Muted: Light grey */
+    --muted: 220 14% 92%;
+    --muted-foreground: 220 9% 46%;
+    
+    /* Destructive */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Borders */
+    --border: 220 13% 87%;
+    --input: 220 13% 87%;
+    --ring: 213 50% 25%;
+    
+    --radius: 0.625rem;
+    
+    /* Custom colors for Reddy Infra */
+    --steel: 213 50% 25%;
+    --steel-light: 213 40% 45%;
+    --concrete: 220 9% 46%;
+    --concrete-light: 220 14% 75%;
+    --rust: 25 70% 45%;
+    --infrastructure: 155 54% 22%;
+    --infrastructure-light: 155 40% 35%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(213 50% 25%) 0%, hsl(155 54% 22%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(40 20% 97%) 100%);
+    --gradient-overlay: linear-gradient(180deg, hsla(0 0% 0% / 0.6) 0%, hsla(0 0% 0% / 0.3) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsla(0 0% 0% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsla(0 0% 0% / 0.1), 0 2px 4px -2px hsla(0 0% 0% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsla(0 0% 0% / 0.1), 0 4px 6px -4px hsla(0 0% 0% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsla(0 0% 0% / 0.1), 0 8px 10px -6px hsla(0 0% 0% / 0.1);
+    --shadow-glow: 0 0 40px hsla(213 50% 25% / 0.2);
+    
+    /* Sidebar */
     --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
+    --sidebar-foreground: 220 9% 26%;
+    --sidebar-primary: 213 50% 25%;
     --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
+    --sidebar-accent: 220 14% 95%;
+    --sidebar-accent-foreground: 213 50% 25%;
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 213 50% 25%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --primary: 213 40% 70%;
+    --primary-foreground: 213 50% 10%;
+    
+    --secondary: 220 14% 60%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --accent: 155 45% 45%;
+    --accent-foreground: 0 0% 98%;
+    
+    --background: 220 20% 8%;
+    --foreground: 0 0% 95%;
+    
+    --card: 220 20% 12%;
+    --card-foreground: 0 0% 95%;
+    
+    --popover: 220 20% 12%;
+    --popover-foreground: 0 0% 95%;
+    
+    --muted: 220 20% 18%;
+    --muted-foreground: 220 14% 60%;
+    
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 213 40% 70%;
+    
+    --steel: 213 40% 70%;
+    --steel-light: 213 35% 55%;
+    --concrete: 220 14% 60%;
+    --concrete-light: 220 14% 45%;
+    --rust: 25 60% 55%;
+    --infrastructure: 155 45% 45%;
+    --infrastructure-light: 155 40% 55%;
+    
+    --sidebar-background: 220 20% 10%;
+    --sidebar-foreground: 220 14% 80%;
+    --sidebar-primary: 213 40% 70%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 220 20% 15%;
+    --sidebar-accent-foreground: 213 40% 70%;
+    --sidebar-border: 220 20% 18%;
+    --sidebar-ring: 213 40% 70%;
   }
 }
 
@@ -99,7 +132,225 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground;
+  html {
+    scroll-behavior: smooth;
   }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    @apply tracking-tight;
+  }
+}
+
+@layer components {
+  /* Reading Progress Bar */
+  .reading-progress {
+    @apply fixed top-0 left-0 h-1 bg-accent z-50;
+    width: var(--scroll-progress, 0%);
+    transition: width 0.1s linear;
+  }
+  
+  /* Animated underline for links */
+  .link-underline {
+    @apply relative inline-block;
+  }
+  
+  .link-underline::after {
+    content: '';
+    @apply absolute w-full h-0.5 bottom-0 left-0 bg-accent origin-bottom-right;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-out;
+  }
+  
+  .link-underline:hover::after {
+    @apply origin-bottom-left;
+    transform: scaleX(1);
+  }
+  
+  /* Glass effect */
+  .glass {
+    @apply bg-card/80 backdrop-blur-md border border-border/50;
+  }
+  
+  /* Infrastructure grid pattern */
+  .infra-grid {
+    background-image: 
+      linear-gradient(to right, hsla(var(--border)) 1px, transparent 1px),
+      linear-gradient(to bottom, hsla(var(--border)) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  
+  /* Noise texture overlay */
+  .noise-overlay {
+    position: relative;
+  }
+  
+  .noise-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  /* Animated counter */
+  .counter-value {
+    font-variant-numeric: tabular-nums;
+  }
+  
+  /* Card hover effects */
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+  
+  .hover-lift:hover {
+    @apply -translate-y-2 shadow-xl;
+  }
+  
+  /* Section divider */
+  .section-divider {
+    @apply w-20 h-1 bg-accent rounded-full mx-auto;
+  }
+}
+
+@layer utilities {
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  }
+  
+  /* Animate on scroll placeholders */
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+  
+  .animate-slide-right {
+    animation: slideRight 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-left {
+    animation: slideLeft 0.6s ease-out forwards;
+  }
+  
+  /* Staggered delays */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Prose styling for articles */
+.prose-infra {
+  @apply text-foreground leading-relaxed;
+}
+
+.prose-infra h2 {
+  @apply text-2xl font-bold mt-12 mb-4 text-primary;
+}
+
+.prose-infra h3 {
+  @apply text-xl font-semibold mt-8 mb-3 text-primary;
+}
+
+.prose-infra p {
+  @apply mb-6 text-muted-foreground;
+}
+
+.prose-infra ul, .prose-infra ol {
+  @apply mb-6 pl-6;
+}
+
+.prose-infra li {
+  @apply mb-2 text-muted-foreground;
+}
+
+.prose-infra blockquote {
+  @apply border-l-4 border-accent pl-6 italic my-6 text-muted-foreground;
+}
+
+.prose-infra img {
+  @apply rounded-lg my-8;
+}
+
+.prose-infra a {
+  @apply text-accent hover:underline;
+}
+
+/* Data highlight blocks */
+.data-block {
+  @apply bg-primary/5 border-l-4 border-accent p-6 my-8 rounded-r-lg;
+}
+
+.data-block-value {
+  @apply text-4xl font-bold text-primary mb-2;
+}
+
+.data-block-label {
+  @apply text-sm text-muted-foreground uppercase tracking-wider;
 }
