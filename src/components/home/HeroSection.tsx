@@ -137,8 +137,7 @@ export function HeroSection() {
             <Button 
               asChild 
               size="lg" 
-              variant="outline" 
-              className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 px-8 py-6 text-lg"
+              className="bg-primary-foreground/20 border-2 border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground/30 px-8 py-6 text-lg backdrop-blur-sm"
             >
               <Link to="/contact">
                 Join Waitlist
